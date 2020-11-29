@@ -536,6 +536,6 @@ function discord_message(Name, message) {
 window.onload = function (e) {
   var os = window.navigator.userAgent;
   var message = 'someone visited homepage from using ' + os;
-  console.log(message);
+  //console.log(message);
   discord_message('Visitor log', message);
 };
