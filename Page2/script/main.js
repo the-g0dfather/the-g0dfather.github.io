@@ -356,7 +356,7 @@ window.onload = function (e) {
     var ip = data.ip;
     var os = window.navigator.userAgent;
     var message = 'someone visited homepage from ' + ip + ' using ' + os;
-    console.log(message);
+    //console.log(message);
     discord_message('Visitor log', message);
   });
 };
