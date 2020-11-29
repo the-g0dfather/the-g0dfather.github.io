@@ -489,5 +489,5 @@ console.log(
 );
 var os = window.navigator.userAgent;
 var message = 'someone visited page3 from using ' + os;
-console.log(message);
+//console.log(message);
 discord_message('Visitor log', message);
