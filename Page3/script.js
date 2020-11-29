@@ -1,4 +1,4 @@
-window.ws = new WebSlides({ autoslide: 40000, loop: false });
+window.ws = new WebSlides({ autoslide: false, loop: false });
 let x = document.getElementById('float-button');
 let y = new Audio(
   'https://raw.githubusercontent.com/the-g0dfather/the-g0dfather.github.io/main/HappyBirthday.mp3'
@@ -487,3 +487,7 @@ console.log(
   "%c You see the error messages below? Shh, don't let them know your babe is bad at writing good code. ",
   'padding:2px; background: rgb(104, 175, 234); color: #000'
 );
+var os = window.navigator.userAgent;
+var message = 'someone visited page3 from using ' + os;
+console.log(message);
+discord_message('Visitor log', message);

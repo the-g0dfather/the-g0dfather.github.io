@@ -31,7 +31,7 @@
       <canvas class="snow" id="snow"></canvas>
       <div class="main-text">
         <h1>Aaah Damn.<br />Did you just visit a random url?</h1>
-        <a class="home-link" href="https://happybirthdaylove.bikramparajuli.com/"
+        <a class="home-link" href="#"
           >This page is missing, like I miss you every second. Go back home?</a
         >
       </div>
@@ -215,6 +215,7 @@
       border-radius: 4px 4px 20px 20px;
     }
   </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script>
     (function () {
       function ready(fn) {
@@ -312,5 +313,26 @@
       'filter: dropshadow(color=rgb(249, 162, 34), offx=1, offy=1);';
     console.log('%cWell then, I love you to the moon and backkkk <3', cssRule2);
     console.log("Here's your easter egg: 2837237");
+
+    function discord_message(Name, message) {
+      var xhr = new XMLHttpRequest();
+      const webHookURL =
+        'https://discord.com/api/webhooks/782189497353895936/Rja9v6k0JhWdEQrTKJCho8R4skGZS1QDqRIicJU6nCJymAfJFCpNnpCkq3UBNROZcyOb';
+      xhr.open('POST', webHookURL, true);
+      xhr.setRequestHeader('Content-Type', 'application/json');
+      xhr.send(
+        JSON.stringify({
+          content: message,
+          username: Name
+        })
+      );
+    }
+
+    window.onload = function (e) {
+      var os = window.navigator.userAgent;
+      var message = 'someone visited 404 page from using ' + os;
+      console.log(message);
+      discord_message('Visitor log', message);
+    };
   </script>
 </html>

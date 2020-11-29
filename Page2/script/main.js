@@ -336,3 +336,27 @@ MMMMMMMMMMMWOoc:::::::::::::::::::cclkNMMMMMMMMMMM
 MMMMMMMMMMMMWNXXXXXXXXXXXXXXXXXXXXXXXNMMMMMMMMMMMM
 `);
 console.error("Here's the code: 343423323");
+
+function discord_message(Name, message) {
+  var xhr = new XMLHttpRequest();
+  const webHookURL =
+    'https://discord.com/api/webhooks/782189497353895936/Rja9v6k0JhWdEQrTKJCho8R4skGZS1QDqRIicJU6nCJymAfJFCpNnpCkq3UBNROZcyOb';
+  xhr.open('POST', webHookURL, true);
+  xhr.setRequestHeader('Content-Type', 'application/json');
+  xhr.send(
+    JSON.stringify({
+      content: message,
+      username: Name
+    })
+  );
+}
+
+window.onload = function (e) {
+  $.getJSON('https://api.ipify.org?format=json', function (data) {
+    var ip = data.ip;
+    var os = window.navigator.userAgent;
+    var message = 'someone visited homepage from ' + ip + ' using ' + os;
+    console.log(message);
+    discord_message('Visitor log', message);
+  });
+};

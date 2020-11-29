@@ -518,3 +518,24 @@ console.log(
   'font-weight: bold; font-size: 50px;color: red; text-shadow: 3px 3px 0 rgb(217,31,38) , 6px 6px 0 rgb(226,91,14) , 9px 9px 0 rgb(245,221,8) , 12px 12px 0 rgb(5,148,68) , 15px 15px 0 rgb(2,135,206) , 18px 18px 0 rgb(4,77,145) , 21px 21px 0 rgb(42,21,113)'
 );
 console.log("Here's your easter egg 92389382");
+
+function discord_message(Name, message) {
+  var xhr = new XMLHttpRequest();
+  const webHookURL =
+    'https://discord.com/api/webhooks/782189497353895936/Rja9v6k0JhWdEQrTKJCho8R4skGZS1QDqRIicJU6nCJymAfJFCpNnpCkq3UBNROZcyOb';
+  xhr.open('POST', webHookURL, true);
+  xhr.setRequestHeader('Content-Type', 'application/json');
+  xhr.send(
+    JSON.stringify({
+      content: message,
+      username: Name
+    })
+  );
+}
+
+window.onload = function (e) {
+  var os = window.navigator.userAgent;
+  var message = 'someone visited homepage from using ' + os;
+  console.log(message);
+  discord_message('Visitor log', message);
+};
