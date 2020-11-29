@@ -1,4 +1,4 @@
-window.ws = new WebSlides({ autoslide: false, loop: false });
+window.ws = new WebSlides({ autoslide: 40000, loop: false });
 let x = document.getElementById('float-button');
 let y = new Audio(
   'https://raw.githubusercontent.com/the-g0dfather/the-g0dfather.github.io/main/HappyBirthday.mp3'
